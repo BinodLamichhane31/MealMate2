@@ -14,7 +14,7 @@ import com.example.mealmate.model.GroceryItem
 import com.example.mealmate.viewmodel.GroceryViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class GroceryFragment : Fragment() {
+class GroceryFragment : BaseFragment() {
     private val viewModel: GroceryViewModel by viewModels()
     private lateinit var listView: ListView
     private lateinit var adapter: ArrayAdapter<String>

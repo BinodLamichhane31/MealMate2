@@ -17,7 +17,7 @@ import com.example.mealmate.ui.home.AddRecipeActivity
 import com.example.mealmate.viewmodel.RecipeViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class MealFragment : Fragment() {
+class MealFragment : BaseFragment() {
 
     private val recipeViewModel: RecipeViewModel by viewModels()
     private lateinit var recipeAdapter: RecipeAdapter

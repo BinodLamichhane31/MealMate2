@@ -14,7 +14,7 @@ import com.example.mealmate.R
 import com.example.mealmate.ui.auth.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : BaseFragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var fullNameTextView: TextView

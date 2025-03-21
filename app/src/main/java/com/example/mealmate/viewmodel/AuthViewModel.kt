@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mealmate.repository.AuthRepository
+import com.example.mealmate.utils.LoadingUtil
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.launch
 
@@ -17,28 +18,37 @@ class AuthViewModel(private val repository: AuthRepository): ViewModel() {
 
     fun register(email: String, password: String,name: String) {
         viewModelScope.launch {
-            val newUser = repository.registerUser(email, password, name)
-            if (newUser != null) {
-                _user.value = newUser
-            } else {
-                _error.value = "Registration failed"
+            try{
+                val newUser = repository.registerUser(email, password, name)
+                if (newUser != null) {
+                    _user.value = newUser
+
+                }
+
+            } catch (e: Exception){
+                _error.value = e.message
             }
         }
     }
 
     fun login(email: String, password: String) {
         viewModelScope.launch {
-            val loginUser = repository.loginUser(email, password)
-            if (loginUser != null) {
-                _user.value = loginUser
-            } else {
-                _error.value = "Login failed"
+            try {
+                val loginUser = repository.loginUser(email, password)
+                if (loginUser != null) {
+                    _user.value = loginUser
+                }
+            } catch (e: Exception) {
+                _error.value = e.message // Display specific error message like "Wrong credentials"
             }
         }
     }
+
+
 
     fun logout() {
         repository.logoutUser()
         _user.value = null
     }
+
 }
