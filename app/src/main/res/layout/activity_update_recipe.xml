@@ -124,6 +124,15 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/imageUpdateRecipe"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/app_logo" />
+
     <Button
         android:id="@+id/btnUpdateRecipe"
         android:layout_width="380dp"
@@ -131,5 +140,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/custom_btns"
         android:text="Update Recipe"/>
+
+
 
 </LinearLayout>

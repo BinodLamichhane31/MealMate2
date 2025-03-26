@@ -40,4 +40,12 @@ class RecipeViewModel : ViewModel() {
         }
     }
 
+    private val _recipe = MutableLiveData<Recipe?>()
+    val recipe: LiveData<Recipe?> get() = _recipe
+    fun getRecipeById(recipeId: String) {
+        repository.getRecipeById(recipeId) { fetchedRecipe ->
+            _recipe.postValue(fetchedRecipe)
+        }
+    }
+
 }
