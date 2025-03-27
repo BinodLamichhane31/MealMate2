@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.mealmate.R
 import com.example.mealmate.ui.home.fragments.GroceryFragment
 import com.example.mealmate.ui.home.fragments.MealFragment
+import com.example.mealmate.ui.home.fragments.MealPlanFragment
 import com.example.mealmate.ui.home.fragments.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -25,6 +26,7 @@ class HomeActivity : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_meals -> replaceFragment(MealFragment())
+                R.id.nav_meals_plan -> replaceFragment(MealPlanFragment())
                 R.id.nav_grocery -> replaceFragment(GroceryFragment())
                 R.id.nav_profile -> replaceFragment(ProfileFragment())
             }

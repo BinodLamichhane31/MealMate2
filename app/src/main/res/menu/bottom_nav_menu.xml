@@ -7,6 +7,11 @@
         android:title="Meals" />
 
     <item
+        android:id="@+id/nav_meals_plan"
+        android:icon="@drawable/meal"
+        android:title="Meals Plan" />
+
+    <item
         android:id="@+id/nav_grocery"
         android:icon="@drawable/grocery_cart"
         android:title="Grocery" />
